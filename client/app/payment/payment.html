@@ -1,0 +1,160 @@
+                       <script>
+                        console.log(sessionStorage.getItem("TicketNo"));
+                          console.log(sessionStorage.getItem("internet"));
+
+
+
+                       </script>
+
+
+                          <div class="container" style="margin-top:100px">
+                                <div class="row">
+                          <div class="col-md-6 col-md-push-2">
+
+                            <span ng-show="payment.user.$touched  && payment.user.$invalid" style="color:red">
+                            <span ng-show="payment.user.$error.required">Name is required !!</span>
+                            </span>
+                            <br>
+                            <span ng-show="payment.email.$touched  && payment.email.$invalid" style="color:red">
+                            <span ng-show="payment.email.$error.required">Email address is required !!</span>
+                            <span ng-show="payment.email.$error.email">Invalid Email Address!!</span>
+                          </span>
+
+                          <br/>
+                          </div>
+                          </div>
+
+
+
+                            <div class="row">
+                          <div class="col-md-4 col-md-push-2 col-md-pull-1">
+                          <div class="credit-card-div">
+                          <div class="panel panel-default">
+                            <form name="payment" class="paymentform">
+                          <div class="panel-heading">
+
+                        <div class="row">
+
+                          <div style="margin-bottom:10px;" class="col-md-12 col-sm-12 col-xs-12">
+                              <input type="text" name="user"  placeholder="Enter Name" ng-model="paymentCtrl.name" class="form-control" required>
+                          </div>
+
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                              <input type="email" name="email" placeholder="Enter your email address" ng-model="paymentCtrl.email" class="form-control" required>
+                          </div>
+
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h5 class="text-muted"> Debit Card Number</h5>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <input type="number"  minlength="4" maxlength="4" ng-model="paymentCtrl.debit1" class="form-control" placeholder="0000" required />
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <input type="number"  minlength="4" maxlength="4" class="form-control" ng-model="paymentCtrl.debit2" placeholder="0000" required />
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <input type="number" minlength="4" maxlength="4"  class="form-control" ng-model="paymentCtrl.debit3" placeholder="0000" required/>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <input type="number"  minlength="4" maxlength="4" class="form-control" ng-model="paymentCtrl.debit4" placeholder="0000" required/>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <span class="help-block text-muted small-font"> Expiry Month</span>
+                                <input type="number"  minlength="2" maxlength="2" class="form-control" ng-model="paymentCtrl.month" placeholder="MM" required />
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <span class="help-block text-muted small-font">  Expiry Year</span>
+                                <input type="number" min="2017"  minlength="4" maxlength="4" class="form-control" ng-model="paymentCtrl.year" placeholder="YYYY" required />
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <span class="help-block text-muted small-font">  CCV</span>
+                                <input type="number" minlength="3" maxlength="3" class="form-control" ng-model="paymentCtrl.cvv" placeholder="CCV" required/>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <img style="height:90px;width:60px;" src="./app/images/credit.png" />
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-12 pad-adjust">
+
+                                <input type="text" class="form-control" ng-model="cardname" placeholder="Name On The Card" required/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pad-adjust">
+                                <div class="checkbox">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-md-push-3 col-sm-push-3 col-xs-push-3 pad-adjust">
+                                 <input onclick="window.location.href='/generateticket'" ng-disabled="payment.$invalid" type="submit" class="btn btn-warning btn-block" value="PAY NOW" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+
+                    <div class="col-md-5 col-md-push-3 paycol">
+                    <div class="panel-group">
+                <div class="panel panel-default">
+                <div class="panel-heading">Order Summery</div>
+                    <div class="panel-body">
+
+
+                  <h3 id="title"></h3>
+                  <h6 id="language"></h6>
+                  <h5 id="location"></h5>
+
+                     <label id="Typeclass"></label>&nbsp &nbsp<span id="seat"></span>
+                  <br>
+                  <label for="">No of Ticket :</label><span id="TicketNo"></span><span> ticket</span>
+                  <br>
+                  <label id="date"></label><br>
+                  <span id="time"></span>
+                  <hr>
+
+
+
+
+
+                    <span for="">Subtotal</span><span style="margin-left:180px;style="font-size:11px;"">Rs</span> &nbsp<span style="font-size:11px;" id="subtotal"></span>
+                        <br>
+
+                     <span for="">Internet Handling Fees</span><span style="margin-left:100px;font-size:11px";>Rs</span> <span style="font-size:11px;" id="internet"></span>
+                     <hr>
+
+                    <span for="">Total</span> <span style="margin-left:190px;"><b>Rs</b></span> &nbsp  <span id="total"></span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+
+              </div>
+
+
+
+
+        </div>
+      </div>
+        </div>

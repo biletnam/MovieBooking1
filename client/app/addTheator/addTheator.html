@@ -1,0 +1,385 @@
+
+<script>
+
+
+
+
+</script>
+
+  <!-- tab for admin -->
+  <div class="container-fluid tab-theatre" style="margin-bottom:600px">
+      <div class="container-fluid">
+	     <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 movie-tab-container">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 movie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <h4 class="glyphicon glyphicon-plus"></h4><br/>Addnew Theatres
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-road"></h4><br/>Delete Theatre Details
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-home"></h4><br/>Map New Movie
+                </a>
+
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Modify Movie Date/Timing
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Remove Movie
+                </a>
+              </div>
+            </div>
+
+            <!-- Add theatre -->
+            <div class="col-lg-5 col-md-push-2 col-sm-2 col-md-5 movie-tab">
+
+              <div class="movie-tab-content active">
+                  <div class="container">
+                    <span ng-show="theatreform.theatre.$touched && theatreform.theatre.$invalid" style="color:red">
+                       <span ng-show="theatreform.theatre.$error.required">Theatre name required!!!</span>
+                       </span>
+                       <br>
+                       <span ng-show="theatreform.location.$touched && theatreform.location.$invalid" style="color:red">
+                          <span ng-show="theatreform.location.$error.required">Location required!!!</span>
+                          </span>
+                             <br>
+                             <span ng-show="theatreform.city.$touched && theatreform.city.$invalid" style="color:red" >
+                             <span ng-show="theatreform.city.$error.required">City name required!!!</span>
+                             </span>
+                     <form name="theatreform" class="theatre">
+                       <div class="form-group">
+                         <label for="theatre"><h4>Theatre Name</h4></label>
+                         <input type="text" name="theatre" placeholder="Entre the theatre name" ng-model="addTheatorCtrl.Name" class="form-control" required>
+
+                       </div>
+                       <div class="form-group">
+                         <label for="location"><h4>Location</h4></label>
+                         <input type="text" name="location" placeholder="Entre the location" options="options" details="details"  ng-places-autocomplete  ng-model="addTheatorCtrl.location"  class="form-control" required>
+                       </div>
+                       <div class="form-group">
+                         <label for="theatre"><h4>City</h4></label>
+                         <input type="text" name="city" placeholder="Entre the City" ng-places-autocomplete ng-model="addTheatorCtrl.city" class="form-control" required>
+                       </div>
+
+                      <button type="button" class="btn btn-success" ng-click=" addTheatorCtrl.addTheatre()" name="button">Save Theatre details</button>
+                    </div>
+                    </form>
+                </div>
+
+                  <!-- Delete theatre -->
+                <div class="movie-tab-content" >
+                  <label for="sel">
+                    <h4>Select City</h4>
+                  </label>
+                    <center>
+                          <div class="form-group" >
+
+                        <select  id="sel" class="form-control" ng-model="addTheatorCtrl.searchByCity">
+                          <option data-placeholder="search theatre by city" ng-repeat="x in addTheatorCtrl.theatre | unique:'city'" value={{x.city}}>{{x.city}}</option>
+
+                        </select>
+                    </div>
+
+                      <div class="container " id="serchcity">
+                        <div class="row">
+                          <div class="col-md-8 col-md-pull-1">
+                            <table class="table" ng-show="addTheatorCtrl.searchByCity">
+
+                               <tr><td>Name</td>
+                                 <td>Location</td>
+                                 <td>City</td>
+                                 <td></td>
+                                </tr>
+                              <tr ng-repeat="h in addTheatorCtrl.theatre | filter:{city:addTheatorCtrl.searchByCity}">
+                                   <td>{{h.Name}}</td>
+                                   <td>{{h.location}}</td>
+                                   <td>{{h.city}}</td>
+                                   <td><i ng-click="addTheatorCtrl.deleteTheator(h)" class="btn glyphicon glyphicon-trash icon"></i></td>
+                                 </tr>
+
+                              </table>
+                          </div>
+                        </div>
+
+                        </div>
+
+
+                    </center>
+                </div>
+
+                 <!-- mapping -->
+                <div class="movie-tab-content">
+                  <label for="movieName"><h4>Movie Name</h4></label>
+                  <select class="sel2 form-control" id="sel2"  name="movieName" ng-model="addTheatorCtrl.movie" >
+                    <option   ng-repeat="x in addTheatorCtrl.movieName">{{x.Title}}</option>
+
+                  </select><br>
+                  <label for="city"><h4>City</h4></label>
+                  <select class="sel2 form-control" id="sel2"  name="city" ng-model="addTheatorCtrl.city" >
+                    <option  value="{{x.city}}" ng-repeat="x in addTheatorCtrl.theatre | unique:'city'">{{x.city}}</option>
+
+                  </select><br>
+
+
+
+                <div class="row">
+
+                  <!-- <h1>{{addTheatorCtrl.search}}</h1> -->
+                          <div class="col-md-5">
+                              <label for="form[]"><h4>All Theatre</h4></label>
+                                <select  name="from[]" id="undo_redo" class="form-control" size="13" multiple="multiple"  >
+                                <option  ng-show="addTheatorCtrl.city" ng-repeat="x in addTheatorCtrl.theatre | filter:{city:addTheatorCtrl.city}">{{x.Name}}</option>
+
+                                </select>
+                          </div>
+                  <div class="col-xs-2">
+                    <br>
+                   <button type="button" id="undo_redo_undo" class="btn btn-primary btn-block">undo</button>
+                   <button type="button" id="undo_redo_rightAll" class="btn btn-default btn-block"><i class="glyphicon glyphicon-forward"></i></button>
+                   <button type="button" id="undo_redo_rightSelected" class="btn btn-default btn-block"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                   <button type="button" id="undo_redo_leftSelected" class="btn btn-default btn-block"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                   <button type="button" id="undo_redo_leftAll" class="btn btn-default btn-block"><i class="glyphicon glyphicon-backward"></i></button>
+                   <button type="button" id="undo_redo_redo" class="btn btn-warning btn-block">redo</button>
+                 </div>
+
+               <div class="col-xs-5">
+                   <label for="to[]"><h4>Selected Theatre</h4></label>
+                   <select name="to[]" selected="all" id="undo_redo_to" ng-model="addTheatorCtrl.search" class="form-control" size="13" multiple="multiple"></select>
+               </div>
+              </div>
+              <label id="time">Select Date</label>
+          <datepicker name="datepicker" id="date" date-format="dd-MM-yyyy" style="color:#29a4d1">
+                 <input ng-model="addTheatorCtrl.date" type="text"/>
+                 <button type="button" class="btn-sm btn-primary" ng-click="addTheatorCtrl.addDate()" name="button">Add Dates</button>
+          </datepicker>
+                 <button id="datecol" class="btn" ng-repeat="d in addTheatorCtrl.dates">{{d.date}} &nbsp <span class="btn-xs btn-danger" ng-click="addTheatorCtrl.removeDate(d)">x</span></button>
+          <div id="time">
+            <h3>{{addTheatorCtrl.xx}}</h3>
+                <label><h5>Show Timing<h5></label>
+              <select ng-init="addTheatorCtrl.hr='HH'"  ng-model="addTheatorCtrl.hr" id="HH" >
+              <option selected="selected">HH</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              </select>
+
+              <select  id="MM" ng-init="addTheatorCtrl.min='MM'" ng-model="addTheatorCtrl.min">
+                <option selected="selected">MM</option>
+                <option value="00">00</option>
+                <option value="05">05</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+              </select>
+              <select ng-init="addTheatorCtrl.type='AM'" ng-model="addTheatorCtrl.type">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+              </select>
+              <button type="button" class="btn-sm btn-primary" ng-click="addTheatorCtrl.addTime()" name="button">Addnew</button>
+        </div>
+              <div id="tim" class="container">
+                <div class="row">
+                  <div class="col-md-6">
+
+                 <button  class="btn btn-xs" id="hr" ng-repeat="y in addTheatorCtrl.time">{{y.time}}<span class="btn-xs btn-danger" ng-click="addTheatorCtrl.removeTime(y)" style="text-align:center">x<span></button>
+
+           </div>
+           </div>
+              <div class="row">
+                <div id="mapbtn" class="col-md-4 col-md-push-2">  <button type="button" class="btn btn-primary" ng-click="addTheatorCtrl.mapping()" name="button">Save Mapping Details</button>
+               </div>
+              </div>
+              </div>
+            </div>
+            <!-- mapping end -->
+
+
+                 <!-- edite date and Timin -->
+                <div class="movie-tab-content">
+
+                      <label for=""><h4>City:</h4></label>
+                      <select value="" class="form-control"  ng-model="addTheatorCtrl.showCity">
+                        <option name="" id="" ng-repeat="x in addTheatorCtrl.theatre |  unique:'city'" >{{x.city}}</option>
+
+                      </select>
+                      <label for=""><h4>Movie Name:</h4></label>
+                      <select value="" class="form-control" ng-model="addTheatorCtrl.showTitle">
+                        <option name="" id="" ng-repeat="x in addTheatorCtrl.movieName">{{x.Title}}</option>
+                      </select>
+                          <label for=""><h4>Theatre:</h4></label>
+                      <select value="" class="form-control" ng-model="addTheatorCtrl.showTheatre">
+                        <option name="" id="" ng-repeat="x in addTheatorCtrl.theatre">{{x.Name}}</option>
+                      </select>
+
+
+                    <table class="table">
+                      <tr>
+                        <td>Theatre Name</td>
+                        <td>Time</td>
+                        <td>Date</td>
+                        <td><td>
+                      </tr>
+                      <tr ng-show="addTheatorCtrl.showCity && addTheatorCtrl.showTitle && addTheatorCtrl.showTheatre" ng-repeat="x in addTheatorCtrl.MappigDetails | filter:{location:addTheatorCtrl.showCity} | filter:{MovieName:addTheatorCtrl.showTitle} | filter:{theatreName:addTheatorCtrl.showTheatre}  ">
+                        <td>{{x.theatreName}}</td>
+                        <td><h5 ng-repeat="d in x.time">{{d.time}}</h5></td>
+                        <td><h5 ng-repeat="d in x.date">{{d.date}}</h5></td>
+                        <td>  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Update</button></td
+
+
+                      </tr>
+                    </table>
+
+                </div>
+                <div class="movie-tab-content">
+
+                      <label for="City"><h5>City:</h5></label>
+
+                    <select name="DeleteMovie" class="form-control Ropt" ng-model="addTheatorCtrl.Rlocation">
+
+                        <option ng-repeat="n in addTheatorCtrl.MappigDetails | unique:'location'">{{n.location}}</option>
+
+                      </select>
+                      <label for="DeleteMovie"><h5>Movie Name:</h5></label>
+
+                      <select name="DeleteMovie" class="form-control Ropt" ng-model="addTheatorCtrl.RMovieName">
+
+
+                        <option ng-repeat="n in addTheatorCtrl.MappigDetails ">{{n.MovieName}}</option>
+
+                      </select>
+
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <table class="table Rtable">
+                            <tr id="Rtxt">
+                              <td><b>Movie Name</b></td>
+                              <td><b>Theatre Name</b></td>
+                              <td><b>City</b></td>
+                              <td></td>
+                            </tr>
+                            <tr  ng-repeat="n in addTheatorCtrl.MappigDetails | filter:{location:addTheatorCtrl.Rlocation}|
+                    filter:{MovieName:addTheatorCtrl.RMovieName}"  ng-show="addTheatorCtrl.Rlocation && addTheatorCtrl.RMovieName">
+                              <td>{{n.MovieName}}</td>
+                              <td>{{n.theatreName}}</td>
+                              <td>{{n.location}}</td>
+                              <td><span class="btn glyphicon glyphicon-trash" ng-click="addTheatorCtrl.removeMovie(n)" style="color:red; cursor:grab"></span><td>
+
+                             </tr>
+                          </table>
+                        </div>
+                      </div>
+
+
+                </div>
+                </div>
+                </div>
+                </div>
+
+                </div>
+                <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+
+      <div class="modal-body body-modal">
+              <!-- date Update -->
+
+              <label id="time">Select Date</label>
+          <datepicker name="datepicker" id="date" date-format="dd-MM-yyyy" style="color:#29a4d1">
+                 <input ng-model="addTheatorCtrl.Udate" type="text"/>
+                 <button type="button" class="btn-sm btn-primary" ng-click="addTheatorCtrl.addUpdateDate()" name="button">Add Dates</button>
+          </datepicker>
+                 <button id="datecol" class="btn" ng-repeat="d in addTheatorCtrl.UpdateDate">{{d.date}} &nbsp <span class="btn-xs btn-danger" ng-click="addTheatorCtrl.removeUpdateDate(d)">x</span></button>
+
+
+        <!-- time update -->
+        <div id="time">
+              <label><h5>Show Timing<h5></label>
+            <select ng-init="addTheatorCtrl.Uhr='HH'"  ng-model="addTheatorCtrl.Uhr" id="HH" >
+            <option selected="selected">HH</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            </select>
+
+            <select  id="MM" ng-init="addTheatorCtrl.Uhr='MM'" ng-model="addTheatorCtrl.Umin">
+              <option selected="selected">MM</option>
+              <option value="00">00</option>
+              <option value="05">05</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+              <option value="55">55</option>
+            </select>
+            <select ng-init="addTheatorCtrl.Uhr='AM'" ng-model="addTheatorCtrl.Utype">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+            <button type="button" class="btn-sm btn-primary" ng-click="addTheatorCtrl.updateTimes()" name="button">Addnew</button>
+      </div>
+            <div id="tim" class="container">
+              <div class="row">
+                <div class="col-md-6">
+
+               <button ng-click="addTheatorCtrl.removeUpdateTime(y)" class="btn btn-xs" id="hr" ng-repeat="y in addTheatorCtrl.UpdateTime">{{y.time}}<span>x<span> &nbsp</button>
+
+         </div>
+         </div>
+
+
+
+      </div>
+
+      <div class="modal-footer" id="footer-btn">
+        <button type="button" class="btn btn-primary btn-confirm" ng-click="addTheatorCtrl.saveUpdate()">Save Changes</button>
+
+
+
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>

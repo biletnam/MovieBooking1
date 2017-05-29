@@ -1,0 +1,139 @@
+
+
+<script>
+// script
+// $(document).ready(function () {
+// $("#button").click(function() {
+//   var m=$("#fval").val();
+//
+//  var n=$("#title td:eq(1)").html();
+//
+//
+//   if(m!=="" && n!==""){
+//     $("#table").slideDown(function () {
+//         $("h5").fadeOut(100);
+//       $("#bt2").click(function () {
+//           $("#table").slideUp();
+//         });
+//
+//     });
+// }
+//   else{
+//     $("h5").fadeIn(100);
+//     $("#table").slideUp();
+// }});
+// });
+
+</script>
+
+
+<div class="container moviewrapper">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <h5>{{omdbCtrl.response.h}}</h5>
+      <h3>Search</h3>
+      <hr></hr>
+          <form novalidate >
+            <div class="form" novalidate>
+            <div class="form-group">
+              <h5>Movie not found!!!</h5>
+      <input type="text" id="fval" ng-model="omdbCtrl.movieName" class="form-control" ng-required="true" required></input>
+
+
+      <div class="row">
+
+        <div class="col-md-4 col-md-push-4"><button type="submit" class=" btn btn-success" id="button" ng-click="omdbCtrl.SearchMovie()" >
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbspSearch</button></div>
+
+      </div>
+    </div>
+    </div>
+    </form>
+
+    </div>
+
+  </div>
+</div>
+
+ <div class="container" id="table">
+   <div class="row">
+     <div class="col-md-2"></div>
+     <div class="col-md-8" >
+       <table class="table" >
+         <tr>
+           <td>Poster</td>
+           <td>Title</td>
+           <td>Year</td>
+           <td>Genre</td>
+           <td>Langauge</td>
+           <td>StarCast</td>
+           <td>Director</td>
+           <td>Duration</td>
+
+         </tr>
+
+         <tr id="title">
+            <td><img src="{{omdbCtrl.useData.Poster}}"></td>
+
+           <td>{{omdbCtrl.useData.Title}}</td>
+
+           <td>{{omdbCtrl.useData.Year}}</td>
+           <td>{{omdbCtrl.useData.Genre}}</td>
+           <td>{{omdbCtrl.useData.Language}}</td>
+            <td>{{omdbCtrl.useData.Actors}}</td>
+            <td>{{omdbCtrl.useData.Director}}</td>
+            <td>{{omdbCtrl.useData.Runtime}}</td>
+
+
+         </tr>
+
+
+       </table>
+       <div class="row">
+         <div class="col-md-4">
+           <button type="button" id="bt2" ng-click="omdbCtrl.AddMovie()" class="btn btn-info btn-circle btn-lg"><i class="glyphicon glyphicon-plus"></i></button></div></div>
+
+    </div>
+
+     </div>
+   </div>
+
+    <div class="container" id="table2">
+      <div class="row">
+      <div class="col-md-8 col-md-push-2">
+
+       <div class="contaner" >
+         <table class="table">
+        <tr id="th">
+          <td>Title</td>
+          <td>Language</td>
+          <td>Genre</td>
+          <td>Director<td>
+          <td>Actors</td>
+          <td>Year</td>
+          <td>Duration</td>
+          <td></td>
+
+        </tr>
+        <tr class="table1" ng-repeat="x in omdbCtrl.getDataDb" id="gray">
+          <td>{{x.Title}}</td>
+          <td>{{x.Langauge}}</td>
+          <td >{{x.Genre}}</td>
+          <td>{{x.Director}}</td>
+          <td  colspan="2">{{x.Actors}}</td>
+          <td>{{x.Year}}</td>
+          <td>{{x.Runtime}}</td>
+          <td><i class="glyphicon glyphicon-remove-circle btn-danger" ng-click="omdbCtrl.delete(x)"></i></td>
+
+        </tr>
+
+
+      </table>
+
+
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>

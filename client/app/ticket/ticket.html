@@ -1,0 +1,480 @@
+
+<script>
+
+
+  console.log(sessionStorage.getItem("TicketNo"));
+  console.log(sessionStorage.getItem("Class"));
+  console.log(sessionStorage.getItem("Title"));
+  console.log(sessionStorage.getItem("Location"));
+  console.log(sessionStorage.getItem("Genre"));
+  console.log(sessionStorage.getItem("Language"));
+  console.log(sessionStorage.getItem("poster"));
+  console.log(sessionStorage.getItem("time"));
+  console.log(sessionStorage.getItem("date"));
+  console.log(sessionStorage.getItem("theatre"));
+  console.log(sessionStorage.getItem("total"));
+</script>
+
+
+<div class="row"  style="margin-top:100px">
+  <div class="col-md-1 col-md-push-2">
+    <h5>No of seats</h5>
+    <select  ng-init="ticketCtrl.selection='1'" ng-change="ticketCtrl.changed(ticketCtrl.selection)" ng-model="ticketCtrl.selection" class="form-control" id="opt">
+      <option selected="selected" value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+
+    </select>
+
+
+
+  </div>
+</div>
+
+<div class="wrapper" ng-readonl>
+
+  <div class="row">
+    <div class="col-md-4 col-md-push-2">
+      <div class="container">
+  <table>
+
+
+    <td>
+<div  class="tselect s" id="A1">A</div>
+</td>
+<td>
+<div class="tselect s" id="B1">B</div>
+</td>
+<td>
+<div class="tselect s" id="C1">C</div>
+</td>
+<td>
+<div class="tselect s" id="D1">D</div>
+</td>
+<td>
+<div class="tselect s" id="E1">E</div>
+</td>
+<td>
+<div class="tselect s" id="F1">F</div>
+</td>
+<td>
+<div class="tselect s" id="G1">G</div>
+</td>
+<td>
+<div class="tselect s" id="H1">H</div>
+</td>
+<td>
+<div class="tselect s" id="I1">I</div>
+</td>
+<td>
+<div class="tselect s" id="J1">J</div>
+</td>
+<td>
+<div class="tselect s" id="K1">K</div>
+</td>
+<td>
+<div class="tselect s" id="L1">L</div>
+</td>
+<td>
+
+<div class="tselect s" id="M1">M</div>
+</td>
+
+</table>
+
+
+</div>
+
+<div class="container second"  >
+<table>
+
+  <td>
+<div class="tselect s" id="A2">A</div>
+</td>
+<td>
+<div class="tselect s" id="B2">B</div>
+</td>
+<td>
+<div class="tselect s" id="C2">C</div>
+</td>
+<td>
+<div class="tselect s" id="D2">D</div>
+</td>
+<td>
+<div class="tselect s" id="E2">E</div>
+</td>
+<td>
+<div class="tselect s" id="F2">F</div>
+</td>
+<td>
+<div class="tselect s" id="G2">G</div>
+</td>
+<td>
+<div class="tselect s" id="H2">H</div>
+</td>
+<td>
+<div class="tselect s" id="I2">I</div>
+</td>
+<td>
+<div class="tselect s" id="J2">J</div>
+</td>
+<td>
+<div class="tselect s" id="K2">K</div>
+</td>
+
+
+</table>
+</div>
+
+
+<div class="container second">
+<table>
+
+  <td>
+<div class="tselect s" id="A3">A</div>
+</td>
+<td>
+<div class="tselect s" id="B3">B</div>
+</td>
+<td>
+<div class="tselect s" id="D3">C</div>
+</td>
+<td>
+<div class="tselect s" id="E3">D</div>
+</td>
+<td>
+<div class="tselect s" id="F3">E</div>
+</td>
+<td>
+<div class="tselect s" id="G3">F</div>
+</td>
+<td>
+<div class="tselect s" id="H3">G</div>
+</td>
+<td>
+<div class="tselect s" id="I3">H</div>
+</td>
+<td>
+<div class="tselect s" id="J3">I</div>
+</td>
+<td>
+<div class="tselect s" id="K3">J</div>
+</td>
+<td>
+<div class="tselect s" id="L3">K</div>
+</td>
+
+
+</table>
+</div><div class="container second">
+<table>
+
+  <td>
+<div class="tselect s" id="A4">A</div>
+</td>
+<td>
+<div class="tselect s" id="B4">B</div>
+</td>
+<td>
+<div class="tselect s" id="C4">C</div>
+</td>
+<td>
+<div class="tselect s" id="D4">D</div>
+</td>
+<td>
+<div class="tselect s" id="E4">E</div>
+</td>
+<td>
+<div class="tselect s" id="F4">F</div>
+</td>
+<td>
+<div class="tselect s" id="G4">G</div>
+</td>
+<td>
+<div class="tselect s" id="H4">H</div>
+</td>
+<td>
+<div class="tselect s" id="I4">I</div>
+</td>
+<td>
+<div class="tselect s" id="J4">J</div>
+</td>
+<td>
+<div class="tselect s" id="K4">K</div>
+</td>
+
+
+
+</table>
+</div><div class="container second">
+<table>
+
+  <td>
+<div class="tselect s" id="A5">A</div>
+</td>
+<td>
+<div class="tselect s" id="B5">B</div>
+</td>
+<td>
+<div class="tselect s" id="C5">C</div>
+</td>
+<td>
+<div class="tselect s" id="D5">D</div>
+</td>
+<td>
+<div class="tselect s" id="E5">E</div>
+</td>
+<td>
+<div class="tselect s" id="F5">F</div>
+</td>
+<td>
+<div class="tselect s" id="G5">G</div>
+</td>
+<td>
+<div class="tselect s" id="H5">H</div>
+</td>
+<td>
+<div class="tselect s" id="I5">I</div>
+</td>
+<td>
+<div class="tselect s" id="J5">J</div>
+</td>
+<td>
+<div class="tselect s" id="K5">K</div>
+</td>
+
+
+</table>
+</div>
+
+
+<div class="container silver" >
+
+  <table>
+
+    <td>
+<div class="tselect g" id="A6">A</div>
+</td>
+<td>
+<div class="tselect g" id="B6">B</div>
+</td>
+<td>
+<div class="tselect g" id="C6">C</div>
+</td>
+<td>
+<div class="tselect g" id="D6">D</div>
+</td>
+<td>
+<div class="tselect g" id="E6">E</div>
+</td>
+<td>
+<div class="tselect g" id="F6">F</div>
+</td>
+<td>
+<div class="tselect g" id="G6">G</div>
+</td>
+<td>
+<div class="tselect g" id="H6">H</div>
+</td>
+<td>
+<div class="tselect g" id="I6">I</div>
+</td>
+<td>
+<div class="tselect g" id="J6">J</div>
+</td>
+<td>
+<div class="tselect g" id="K6">K</div>
+</td>
+<td>
+<div class="tselect g" id="L6">L</div>
+</td>
+<td>
+
+<div class="tselect g" id="M6">M</div>
+</td>
+
+</table>
+</div>
+<div class="container second">
+<table>
+
+  <td>
+<div class="tselect g" id="A7">A</div>
+</td>
+<td>
+<div class="tselect g" id="B7">B</div>
+</td>
+<td>
+<div class="tselect g" id="C7">C</div>
+</td>
+<td>
+<div class="tselect g" id="D7">D</div>
+</td>
+<td>
+<div class="tselect g" id="E7">E</div>
+</td>
+<td>
+<div class="tselect g" id="F7">F</div>
+</td>
+<td>
+<div class="tselect g" id="G7">G</div>
+</td>
+<td>
+<div class="tselect g" id="H7">H</div>
+</td>
+<td>
+<div class="tselect g" id="I7">I</div>
+</td>
+<td>
+<div class="tselect g" id="J7">J</div>
+</td>
+<td>
+<div class="tselect g" id="K7">K</div>
+</td>
+
+
+</table>
+</div>
+<div class="container second">
+<table>
+
+  <td>
+<div class="tselect g" id="A8">A</div>
+</td>
+<td>
+<div class="tselect g" id="B8">B</div>
+</td>
+<td>
+<div class="tselect g" id="C8">C</div>
+</td>
+<td>
+<div class="tselect g" id="D8">D</div>
+</td>
+<td>
+<div class="tselect g" id="E8">E</div>
+</td>
+<td>
+<div class="tselect g" id="F8">F</div>
+</td>
+<td>
+<div class="tselect g" id="G8">G</div>
+</td>
+<td>
+<div class="tselect g" id="H8">H</div>
+</td>
+<td>
+<div class="tselect g" id="I8">I</div>
+</td>
+<td>
+<div class="tselect g" id="J8">J</div>
+</td>
+<td>
+<div class="tselect g" id="K8">K</div>
+</td>
+
+
+</table>
+</div><div class="container second">
+<table>
+
+  <td>
+<div class="tselect g" id="A9">A</div>
+</td>
+<td>
+<div class="tselect g" id="B9">B</div>
+</td>
+<td>
+<div class="tselect g" id="C9">C</div>
+</td>
+<td>
+<div class="tselect g" id="D9">D</div>
+</td>
+<td>
+<div class="tselect g" id="E9">E</div>
+</td>
+<td>
+<div class="tselect g" id="F9">F</div>
+</td>
+<td>
+<div class="tselect g" id="G9">G</div>
+</td>
+<td>
+<div class="tselect g" id="H9">H</div>
+</td>
+<td>
+<div class="tselect g" id="I9">I</div>
+</td>
+<td>
+<div class="tselect g" id="J9">J</div>
+</td>
+<td>
+<div class="tselect g" id="K9">K</div>
+</td>
+
+
+</table>
+</div>
+</div>
+<div class="container">
+  <div class="col-md-4 col-md-push-4">
+  <div class="panel-group">
+    <div class="panel panel-info">
+      <div class="panel-heading"><h5>Booking Details</h5></div>
+
+      <div class="panel-body bookingsum">
+        <table class="table">
+          <tr>
+            <th><h5>No of seat selected</h5></th>
+            <th><h5 id="seatSelected">0</h5></th>
+
+          </tr>
+          <tr>
+            <th><h5>Class</h5></th>
+            <th><h5 id="class"></h5></th>
+
+          </tr>
+           <tr>
+            <td >Seat NO:</td><td  style="width:800px;margin-right:400p" colspan='5' id="seatNO" ></td>
+
+
+            </tr>  <tr>
+                <th><h5>Sub Total</h5></th>
+                <th><h5 id="subTotal">0</h5></th>
+
+              </tr>  <tr>
+                  <th><h5>Internet Handling Charges</h5></th>
+                  <th><h5 id="internet">0</h5></th>
+
+                </tr>
+                <tr>
+                  <th><h5>Amount Payable</h5></th>
+                  <th><h5 id="payable">0</h5></th>
+
+                </tr>
+                <tr>
+                 <th><a type="button" ng-href="{{ticketCtrl.selectedTicket}}" id="paymentbtn" class="btn btn-primary btsize" ng-click="ticketCtrl.amount()" name="button">Proceed To Payment</a></th>
+
+
+                </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="row" style="margin-top:3px">
+  <div class="col-md-8">
+
+<div class="container screen">  <h5>Screen This Way</h5></div>
+
+  </div>
+</div>

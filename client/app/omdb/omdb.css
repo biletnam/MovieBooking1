@@ -1,0 +1,98 @@
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+#title img{
+width:170px;height:200px;
+}
+.moviewrapper{
+  margin-top: 150px;
+}
+
+.moviewrapper h3{
+  text-align: center;
+  color: red;
+  font-family: 'Montserrat', sans-serif;
+
+}
+#button{
+  display: inline-block;
+  width: 100px;
+  background-color: #f442b0;
+  margin: 10px 0px 0px 69px;
+  border:  1px solid red;
+
+}
+
+#button:hover{
+   box-shadow: 4px 6px 5px lightgray;
+
+}
+
+#table{
+  margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+  display: none;
+  font-size: 10px;
+}
+
+#table2{
+  margin-top: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+
+
+}
+#gray:hover{
+     background-color: #efeae6;
+     box-shadow:4px #ddd8d4;
+}
+
+#th{
+   background-color: #e28534;
+
+}
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+#bt2{
+  text-align: center;
+  margin-left: 65px;
+
+}
+.btn-denger{
+  width:10px;
+  height: 10px;
+
+}
+.glyphicon-remove-circle{
+  cursor: pointer;
+}
+
+.moviewrapper  h5{
+  color: red;
+  display: none;
+}

@@ -1,0 +1,38 @@
+.genstyle{
+
+ text-align: center;
+
+}
+#div1{
+  background-color: #b3cfe0;
+  height: 70%;
+  border-radius: 5px;
+  color: white;
+
+
+}
+.lef{
+  width: 98%;
+
+}
+#genimage{
+  width: 160px;
+  height: 200px;
+  padding-right:  15px;
+
+}
+
+.genbold{
+font-style: italic;
+
+}
+#qrcode{
+
+
+  font-size: 50px;
+  float: right;
+}
+#adv{
+  width: 100%;
+  height: 150px;
+}

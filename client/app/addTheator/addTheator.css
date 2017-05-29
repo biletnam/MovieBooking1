@@ -1,0 +1,187 @@
+
+/*  movie tab */
+div.movie-tab-container{
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 0px !important;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border:1px solid #ddd;
+  margin-top: 0px;
+  margin-left: 0px;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+}
+div.movie-tab-menu{
+
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  margin-left: 0px;
+  height: 200px;
+}
+div.movie-tab-menu div.list-group{
+  margin-bottom: 0;
+
+}
+
+div.movie-tab-menu div.list-group>a{
+  margin-bottom: 0;
+  height: 100px;
+}
+div.movie-tab-menu div.list-group>a .glyphicon,
+div.movie-tab-menu div.list-group>a .fa {
+  color: #5A55A3;
+}
+div.movie-tab-menu div.list-group>a:first-child{
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+}
+div.movie-tab-menu div.list-group>a:last-child{
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+}
+div.movie-tab-menu div.list-group>a.active,
+div.movie-tab-menu div.list-group>a.active .glyphicon,
+div.movie-tab-menu div.list-group>a.active .fa{
+  background-color: #5A55A3;
+  background-image: #5A55A3;
+  color: #ffffff;
+}
+div.movie-tab-menu div.list-group>a.active:after{
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -13px;
+  border-left: 0;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  border-left: 10px solid #5A55A3;
+}
+
+div.movie-tab-content{
+  background-color: #ffffff;
+  /* border: 1px solid #eeeeee; */
+  padding-left: 20px;
+  padding-top: 10px;
+
+}
+
+div.movie-tab div.movie-tab-content:not(.active){
+  display: none;
+}
+div.movie-tab{
+  height: 600px;
+}
+.theatre h5{
+  font-size: 12px;
+  text-align: left;
+}
+.theatre input{
+  width: 600px;
+}
+.theatre button{
+   width: 160px;
+   margin-left: 200px;
+   margin-top: 20px;
+   text-align: center;
+}
+.none{
+  display: none;
+}
+
+.github.ribbon {
+	position: fixed;
+	display: block;
+	top: 40px;
+	right: 0;
+	border: 0;
+	z-index: 1001;
+}
+
+.prettyprint {
+	padding: 10px!important;
+}
+
+#wrap {
+	padding-top: 70px;
+}
+
+#home h1 {
+	margin-bottom: 30px;
+}
+#demo,
+#examples,
+#support,
+#download {
+	padding-top: 40px;
+}
+#time{
+  margin: 30px 0px 0px 0px;
+  color: #35a3a5;
+  border-color: #909b9b;
+   width: 615px;
+}
+#hr{
+  display: inline;
+
+  background-color: lightpink;
+  padding: 5px;
+  margin:5px;
+   text-decoration: none;
+
+
+}
+#tim{
+   margin-top: 15px;
+
+
+
+}
+#serchcity{
+  margin-top: 100px;
+
+}
+#mapbtn{
+
+  margin-left: 40px;
+  margin-top: 40px;
+}
+#date{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#datecol{
+  display: inline;
+  margin-left: 13px;
+  margin-top: 40px;
+
+  border-radius: 4px;
+
+  background-color: #acb4f9;
+}
+.Ropt{
+margin:2px 0px 40px 0px;
+border-color: lightblue;
+font-family: sans-serif;
+font-weight: 600px;
+font-size: 17px;
+}
+#Rtxt{
+text-align: center;
+}
+.icon{
+  color: red;
+}
+#footer-btn{
+  margin-right: 200px;
+
+}
+.tab-theatre{
+   margin-top: 100px; 
+}

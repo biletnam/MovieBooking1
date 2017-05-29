@@ -1,0 +1,29 @@
+{
+  "name": "yomastertemplate",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.5.0",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.0.1",
+    "bootstrap": "~3.1.1",
+    "angular-resource": "~1.5.0",
+    "angular-cookies": "~1.5.0",
+    "angular-sanitize": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "font-awesome": ">=4.1.0",
+    "lodash": "~2.4.1",
+    "angular-socket-io": "~0.7.0",
+    "angular-validation-match": "~1.5.2",
+    "multiselect": "multiselect-two-sides#^2.3.11",
+    "ng-autocomplete-places": "^2.0.0",
+    "angular-ui": "^0.4.0",
+    "angular-ui-bootstrap-datetimepicker": "^2.5.0",
+    "angularjs-datepicker": "^2.1.19",
+    "animate.css": "^3.5.2",
+    "wow": "wowjs#^1.1.2",
+    "angular-rateit": "^3.0.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.5.0"
+  }
+}
